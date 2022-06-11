@@ -30,6 +30,7 @@ jobs:
     env:
       REGISTRY_REPO: abdellbou/cicd_semsar
     steps:
+      - uses: actions/checkout@v3
       - name: Build image
         run: docker image build -t $REGISTRY_REPO:latest --file Dockerfile .
 
