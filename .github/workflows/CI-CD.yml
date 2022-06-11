@@ -31,6 +31,7 @@ jobs:
       REGISTRY_REPO: abdellbou/cicd_semsar
     steps:
       - uses: actions/checkout@v3
+      - run: ls -al
       - name: Build image
         run: docker image build -t $REGISTRY_REPO:latest --file Dockerfile .
 
