@@ -18,7 +18,7 @@ public class HomeController {
     @Autowired
     TypeRepository typeRepository;
 
-    @RequestMapping("/index")
+    @RequestMapping("/")
     public  String index(Model model ,
                          @RequestParam(value = "ville" , defaultValue = "Choisiser") String ville ,
                          @RequestParam(value = "type" , defaultValue = "Choisiser") String type) {
