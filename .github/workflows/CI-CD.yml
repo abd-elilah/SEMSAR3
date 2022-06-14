@@ -55,17 +55,20 @@ jobs:
       - name: Push image to registery
         run: docker push $REGISTRY_REPO:latest
         
-  heroku:
-
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      - name: Deploy Docker Image to Heroku
+  # You may pin to the exact commit or the version.
+  # uses: techmmunity/docker-heroku-deploy@ab0eabb6186da53eabe90b5c0a443404e7659c44
+        uses: techmmunity/docker-heroku-deploy@v1.0.0
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP}} #Must be unique in Heroku
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
-          usedocker: true
+          # Email Linked to your Heroku Account
+          email: ${{secrets.HEROKU_EMAIL}}
+          # Your Heroku API Key
+          api_key: ${{secrets.HEROKU_APP_KEY}}
+          # Your Heroku App Name
+          app_name: ${{secrets.HEROKU_APP}}
+          # Dokerfile path
+
+
 
 
 
