@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -19,6 +20,7 @@ public class StatusLogement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(max = 30)
     private String status;
     @OneToMany(mappedBy = "status")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

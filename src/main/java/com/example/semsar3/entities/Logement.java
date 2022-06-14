@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.List;
 
@@ -20,11 +21,18 @@ public class Logement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Size(max = 30)
     private String titre;
+    @Size(max = 30)
     private int superficie;
+    @Size(max = 30)
     private double prix;
+    @Size(max = 30)
     private String description;
+    @Size(max = 30)
     private String adress;
+    @Size(max = 30)
     private int nbr_de_coloc;
     @OneToMany(mappedBy ="logement" )
 

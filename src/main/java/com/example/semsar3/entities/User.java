@@ -33,9 +33,12 @@ public class User {
     @Size(min = 10 )
     private String phone;
     @NotEmpty
+    @Size(max = 30)
     private String username;
     @NotEmpty
+    @Size(max = 30)
     private String password;
+    @Size(max = 30)
     private String img;
     @OneToMany(mappedBy = "user")
     private List<Demande> demandes;
