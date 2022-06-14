@@ -25,7 +25,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: build
+        name: build # Will be used down for docker image building
         path: |
             target/**
   docker_build:
@@ -59,13 +59,13 @@ jobs:
 
         uses: techmmunity/docker-heroku-deploy@v1.0.0
         with:
-          t
+          # Email Linked to your Heroku Account
           email: ${{secrets.HEROKU_EMAIL}}
-
+          # Your Heroku API Key
           api_key: ${{secrets.HEROKU_API_KEY}}
-
+          # Your Heroku App Name
           app_name: ${{secrets.HEROKU_APP}}
-
+          # Dokerfile path
 
 
 
